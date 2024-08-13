@@ -47,7 +47,7 @@ export default function Signinform() {
                 return;
             }
             toast.info('Vous êtes connecté!');
-            router.replace('dashboard');
+            router.replace('pay');
         } catch (error) {
             console.error('Échec de la connexion:', error);
             toast.error('Échec de la connexion. Veuillez réessayer.');
