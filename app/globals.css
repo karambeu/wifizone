@@ -1,0 +1,118 @@
+/* .custom-form-control {
+  background-color: white !important;
+  border: 1px solid #ced4da !important;
+  position: relative;
+  z-index: 0;
+}
+
+.custom-form-control:focus {
+  border-color: #adb5bd !important;
+  box-shadow: none !important;
+}
+
+.form-outline {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  background: white;
+  padding: 0 5px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.form-control:focus ~ .form-label,
+.form-control:not(:placeholder-shown) ~ .form-label {
+  transform: translateY(-1.5rem);
+  font-size: 0.85rem;
+  color: #495057;
+  z-index: 1;
+} */
+
+
+/* 
+.form-outline {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.custom-form-control {
+  background: white !important;
+  border: 1px solid #adb5bd !important; 
+  position: relative;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.custom-form-control:focus {
+  border-color: #56370c !important;
+  box-shadow: none;
+}
+
+.form-label {
+  position: absolute;
+  color: #56370c !important;
+  font-size: 0.9rem;
+}
+ */
+
+
+
+ .form-outline {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.custom-form-control {
+  /* background: white !important; */
+  border: 1px solid #adb5bd !important;
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem !important;
+  font-size: 0.9rem;
+}
+
+.custom-form-control:focus {
+  border-color: #56370c !important;
+  box-shadow: none;
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  background: #f8f9fa !important; /* Fond blanc pour éviter la superposition du texte */
+  padding: 0 0.25rem;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
+  color: #56370c; /* Couleur par défaut du label */
+  font-size: 0.9rem;
+  pointer-events: none; /* Permet aux clics de passer à l'élément de formulaire */
+}
+
+/* Style lorsque l'input est en focus ou contient une valeur */
+.custom-form-control:focus ~ .form-label,
+.custom-form-control:not(:placeholder-shown) ~ .form-label {
+  background: white; /* Fond blanc pour le label au-dessus */
+  color: #56370c !important; /* Couleur du label en focus */
+  font-size: 0.85rem; /* Réduit la taille de la police */
+  padding: 0 0.25rem; /* Ajoute du padding pour maintenir le fond blanc */
+}
+
+
+  .custom-footer {
+    background-color: #56370c;
+    color: white;
+  }
+  
+  .custom-footer .text-muted {
+    color: white !important;
+  }
+  
