@@ -6,11 +6,10 @@ import { toast } from 'react-toastify'
 import Image from 'next/image'
 
 export default function Signinform() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [formValues, setFormValues] = useState({ email: '', password: '' });
     const router = useRouter();
     const searchParams = useSearchParams();
-  
+
     useEffect(() => {
         const message = searchParams.get('message');
         if (message === 'signed-out') {
@@ -19,15 +18,26 @@ export default function Signinform() {
         }
     }, [searchParams, router]);
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormValues((prevValues) => ({
+            ...prevValues,
+            [name]: name === 'email' ? value.trim().toLowerCase() : value.trim(),
+        }));
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const { email, password } = formValues;
+
         if (!email || !password) {
             toast.error("Veuillez renseigner tous les champs");
             return;
         }
+
         try {
             const response = await signIn("credentials", {
-                email: email.toLowerCase(),
+                email,
                 password,
                 redirect: false,
             });
@@ -39,7 +49,7 @@ export default function Signinform() {
             toast.info('Vous êtes connecté!');
             router.replace('dashboard');
         } catch (error) {
-            console.log('error:', error);
+            console.error('Échec de la connexion:', error);
             toast.error('Échec de la connexion. Veuillez réessayer.');
         }
     }
@@ -69,14 +79,16 @@ export default function Signinform() {
                                                 <span className="h1 fw-bold mb-0">WIFIZONE-BC</span>
                                             </div>
 
-                                            <h5 className="fw-normal mb-3 pb-3" style={{ letterSpacing: '1px' }}>Connectez-vous pour l&apos;Enregistrement des clients</h5>
+                                            <h5 className="fw-normal mb-3 pb-3" style={{ letterSpacing: '1px' }}>
+                                                Connectez-vous pour l&apos;Enregistrement des clients
+                                            </h5>
 
                                             <div className="form-outline mb-4">
                                                 <input
                                                     type="text"
-                                                    id="form2Example17"
+                                                    name="email"
                                                     className="form-control form-control-lg custom-form-control"
-                                                    onChange={(e) => setEmail(e.target.value)}
+                                                    onChange={handleInputChange}
                                                 />
                                                 <label className="form-label" htmlFor="form2Example17">Email ou Pseudo</label>
                                             </div>
@@ -84,9 +96,9 @@ export default function Signinform() {
                                             <div className="form-outline mb-4">
                                                 <input
                                                     type="password"
-                                                    id="form2Example27"
+                                                    name="password"
                                                     className="form-control form-control-lg custom-form-control"
-                                                    onChange={(e) => setPassword(e.target.value.trim())}
+                                                    onChange={handleInputChange}
                                                 />
                                                 <label className="form-label" htmlFor="form2Example27">Mot de passe</label>
                                             </div>
