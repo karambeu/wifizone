@@ -40,16 +40,15 @@ export default function Signinform() {
                 email,
                 password,
                 redirect: false,
+                callbackUrl: `${window.location.origin}/dashboard`
             });
-
+            console.log('Response:', response); // Inspectez la réponse
             if (!response.ok) {
                 toast.error('Email ou mot de passe incorrect.');
                 return;
             }
             toast.info('Vous êtes connecté!');
-            setTimeout(() => {
-                router.push('/dashboard');
-            }, 100); // Délai de 100ms
+            window.location.href = response.url; // Redirection manuelle
         } catch (error) {
             console.error('Échec de la connexion:', error);
             toast.error('Échec de la connexion. Veuillez réessayer.');
