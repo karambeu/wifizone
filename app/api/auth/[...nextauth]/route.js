@@ -54,7 +54,7 @@ const authOptions = {
             session.role = token.role;
           }
           return session;
-        },
+        }
       },    
     session: {
         strategy: "jwt",
