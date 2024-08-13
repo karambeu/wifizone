@@ -3,11 +3,11 @@ import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import Footer from '@/components/Footer'
 import Headerdash from '@/components/Headerdash'
 import Navbar from '@/components/Navbar'
-import Loader from '@/components/Loader';
 import RegisterClient from '@/components/Registerclient'
+import { redirect } from "next/navigation";
 async function Client() {
   const session = await getServerSession(authOptions) 
-  if (!session) return <Loader />;
+  if (!session) return redirect('/')
   return (
     <>
         <div>

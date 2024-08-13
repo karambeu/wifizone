@@ -1,15 +1,15 @@
 import { getServerSession } from "next-auth";
 import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import Footer from '@/components/Footer';
-import Loader from '@/components/Loader';
 import Navbar from '@/components/Navbar';
 import Headerdash from '@/components/Headerdash';
 import Widget from "@/components/Widget";
 import Table from "@/components/Table";
+import { redirect } from "next/navigation";
 
 async function Dashboard() { 
   const session = await getServerSession(authOptions) 
-  if (!session) return <Loader />;
+  if (!session) return redirect('/')
 console.log(session)
   return (
     <>
