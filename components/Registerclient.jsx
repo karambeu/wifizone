@@ -68,7 +68,9 @@ function RegisterClient({ user_id }) {
         const form = e.target;
         form.reset();
         toast.success('Client enregistré avec succès');
-        router.replace("/dashboard");
+        setTimeout(() => {
+          router.push('/dashboard');
+      }, 100); // Délai de 100ms
       } else {
         console.log('Erreur:', data.message);
         toast.error(data.message);
