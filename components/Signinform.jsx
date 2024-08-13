@@ -47,7 +47,9 @@ export default function Signinform() {
                 return;
             }
             toast.info('Vous êtes connecté!');
-            router.replace('pay');
+            setTimeout(() => {
+                router.push('/dashboard');
+            }, 100); // Délai de 100ms
         } catch (error) {
             console.error('Échec de la connexion:', error);
             toast.error('Échec de la connexion. Veuillez réessayer.');
