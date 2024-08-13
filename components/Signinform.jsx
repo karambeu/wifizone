@@ -48,7 +48,7 @@ export default function Signinform() {
                 return;
             }
             toast.info('Vous êtes connecté!');
-            window.location.href = response.url; // Redirection manuelle
+           // window.location.href = response.url; // Redirection manuelle
         } catch (error) {
             console.error('Échec de la connexion:', error);
             toast.error('Échec de la connexion. Veuillez réessayer.');
