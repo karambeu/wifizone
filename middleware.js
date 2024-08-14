@@ -13,7 +13,7 @@ export async function middleware(req) {
   // Redirection vers la page de connexion si non authentifié
   if (pathname.startsWith('/dashboard') || pathname.startsWith('/register') || pathname.startsWith('/state') || pathname.startsWith('/pay')) {
     const url = new URL('/auth/signin', req.url);
-    url.searchParams.set('callbackUrl', req.url);
+    url.searchParams.set('callbackUrl', req.nextUrl.pathname);
     return NextResponse.redirect(url);
   }
 

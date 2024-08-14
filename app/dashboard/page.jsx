@@ -10,7 +10,7 @@ import { redirect } from "next/navigation";
 async function Dashboard() { 
   const session = await getServerSession(authOptions) 
   if (!session) return redirect('/')
-console.log(session)
+//console.log(session)
   return (
     <>
         <div>
