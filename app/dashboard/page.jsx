@@ -3,12 +3,12 @@ import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Headerdash from '@/components/Headerdash';
-import { redirect } from "next/navigation";
+//import { redirect } from "next/navigation";
 
 async function Dashboard() { 
   const session = await getServerSession(authOptions) 
-  if (!session) return redirect('/')
-//console.log(session)
+ // if (!session) return redirect('/')
+console.log(session)
   return (
     <>
         <div>
