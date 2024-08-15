@@ -3,8 +3,6 @@ import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Headerdash from '@/components/Headerdash';
-import Widget from "@/components/Widget";
-import Table from "@/components/Table";
 import { redirect } from "next/navigation";
 
 async function Dashboard() { 
@@ -29,8 +27,7 @@ async function Dashboard() {
                   <div className="col-lg-12">
                     <h2 className="fw-bold mb-5">Mes objectifs</h2>
                         {/* widget et table ici */}
-                    <Widget uid ={session?.userId}  />
-                    <Table uidt ={session?.userId} />
+                 
                   </div>
                 </div>
               </div>
