@@ -2,7 +2,10 @@
 import React, { useState} from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'react-toastify';
-function Registerform() {
+
+function RegisterForm() {
+
+    const router = useRouter();
     const [fullname, setFullname] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -10,8 +13,7 @@ function Registerform() {
     const [fpasseword, setFpassword] = useState('');
     const [term, setTerm] = useState(false);
     const [role, setRole] = useState('');
-    const router = useRouter();
-
+    
     const validateForm = () => {
         const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{:;'?/>.<,])(?=.{8,})/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -132,4 +134,4 @@ function Registerform() {
     );
 }
 
-export default Registerform;
+export default RegisterForm;

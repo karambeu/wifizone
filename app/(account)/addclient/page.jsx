@@ -1,13 +1,26 @@
-import { getServerSession } from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
+'use client'
 import Footer from '@/components/Footer'
 import Headerdash from '@/components/Headerdash'
 import Navbar from '@/components/Navbar'
 import RegisterClient from '@/components/Registerclient'
-import { redirect } from "next/navigation";
-async function Client() {
-  const session = await getServerSession(authOptions) 
-  if (!session) return redirect('/')
+import { useSession } from 'next-auth/react';
+import Loader from '@/components/Loader';
+import { useEffect, useState } from 'react';
+
+function Client() {
+  
+  const { data: session, status } = useSession();
+  const [id, setId] = useState('');
+
+    useEffect(() => {
+        if (status === 'authenticated') {
+          setId(session.userId);
+        }
+      }, [status]);
+
+      if (status === 'loading') {
+        return <Loader />;
+      }
   return (
     <>
         <div>
@@ -24,7 +37,7 @@ async function Client() {
             <div className="card-body py-5 px-md-5">
               <div className="row d-flex justify-content-center">
                 <div className="col-lg-8">
-                  <RegisterClient user_id = {session?.userId}/> 
+                  <RegisterClient user_id = {id}/> 
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@ function Table({ uidt }) {
   }, [uidt]);
    async function fetchClients () {
 	try {
-	  const response = await fetch(`/api/client/${uidt}`, {
+	  const response = await fetch(`/api/client/${uidt}`, { 
 		cache: 'no-store',
 	  });
 	  if (!response.ok) {
