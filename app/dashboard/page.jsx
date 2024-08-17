@@ -6,7 +6,7 @@ import Headerdash from '@/components/Headerdash';
 import Loader from '@/components/Loader';
 import { useState,useEffect } from 'react';
 
-async function Dashboard() { 
+function Dashboard() { 
   const { data: session, status } = useSession();
   // const [email, setEmail] = useState('');
   // const [pseudo, setPseudo] = useState('');
