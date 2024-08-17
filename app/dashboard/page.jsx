@@ -1,18 +1,23 @@
-//import { getServerSession } from "next-auth";
-//import {authOptions} from "@/app/api/auth/[...nextauth]/route";
+'use client'
+import { useSession } from 'next-auth/react';
 import Footer from '@/components/Footer';
-// import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Navbar';
 import Headerdash from '@/components/Headerdash';
-//import { redirect } from "next/navigation";
 
 async function Dashboard() { 
- // const session = await getServerSession(authOptions) 
- // if (!session) return redirect('/')
-//console.log(session)
+  const { data: session, status } = useSession();
+  // const [email, setEmail] = useState('');
+  // const [pseudo, setPseudo] = useState('');
+  // const [id, setId] = useState('');
+
+console.log(session)
+ if (status === 'loading') {
+  return <Loader />;
+}
   return (
     <>
         <div>
-          {/* <Navbar /> */}
+          <Navbar />
           <Headerdash />
           <section className="text-center">
             <div
