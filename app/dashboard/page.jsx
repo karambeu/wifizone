@@ -1,18 +1,18 @@
-import { getServerSession } from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
+//import { getServerSession } from "next-auth";
+//import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+// import Navbar from '@/components/Navbar';
 import Headerdash from '@/components/Headerdash';
 //import { redirect } from "next/navigation";
 
 async function Dashboard() { 
-  const session = await getServerSession(authOptions) 
+ // const session = await getServerSession(authOptions) 
  // if (!session) return redirect('/')
-console.log(session)
+//console.log(session)
   return (
     <>
         <div>
-          <Navbar />
+          {/* <Navbar /> */}
           <Headerdash />
           <section className="text-center">
             <div
