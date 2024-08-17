@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar';
 import Headerdash from '@/components/Headerdash';
 import Loader from '@/components/Loader';
 import { useState,useEffect } from 'react';
+import Widget from '@/components/Widget';
+import Table from '@/components/Table';
 
 function Dashboard() { 
   const { data: session, status } = useSession();
@@ -39,7 +41,8 @@ console.log(session)
                 <div className="col-lg-12">
                   <h2 className="fw-bold mb-5">Mes objectifs</h2>
                       {/* widget et table ici */}
-               
+                  <Widget uid = {id} />
+                  <Table uidt = {id} />
                 </div>
               </div>
             </div>
