@@ -18,7 +18,7 @@ function Dashboard() {
       setId(session.userId);
     }
   }, [status]);
-console.log(session)
+  
  if (status === 'loading') {
   return <Loader />;
 }
