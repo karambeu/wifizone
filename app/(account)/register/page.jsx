@@ -1,5 +1,5 @@
 'use client'
-import RegisterForm from '@/components/Registerform'
+import RegisterForm from '@/components/RegisterForm'
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation'
 import { toast } from 'react-toastify';

@@ -2,7 +2,7 @@
 import Footer from '@/components/Footer'
 import Headerdash from '@/components/Headerdash'
 import Navbar from '@/components/Navbar'
-import RegisterClient from '@/components/Registerclient'
+import RegisterClient from '@/components/RegisterClient'
 import { useSession } from 'next-auth/react';
 import Loader from '@/components/Loader';
 import { useEffect, useState } from 'react';
