@@ -7,7 +7,9 @@ function Headerdash() {
             backgroundImage: "url('/bgheaderdash.jpg')",
             height: '300px'
           }}
-        ></div>
+        >
+          
+        </div>
     </>
   )
 }

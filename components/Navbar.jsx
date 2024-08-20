@@ -39,7 +39,7 @@ function Navbar() {
   }
 
   return (
-    <div>
+    <>
       <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: '#56370c' }} data-bs-theme="dark">
         <div className="container-fluid">
           <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -73,7 +73,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 }
 
